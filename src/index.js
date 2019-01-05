@@ -2,19 +2,21 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 
+//First Component
 class Square extends React.Component {
   render() {
     return (
       <button className="square">
-        {/* TODO */}
+        {this.props.value}
       </button>
     );
   }
 }
 
+//Second Component
 class Board extends React.Component {
   renderSquare(i) {
-    return <Square />;
+    return <Square value={i}/>;
   }
 
   render() {
@@ -43,6 +45,7 @@ class Board extends React.Component {
   }
 }
 
+//Third Component
 class Game extends React.Component {
   render() {
     return (
