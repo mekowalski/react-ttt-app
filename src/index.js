@@ -37,9 +37,16 @@ class Board extends React.Component {
 
   //Modify to read from it, the squares array in the Board's constructor
   //Each Square will now recieve a value prop of X, O or null for empty squares
+  //Maintain Board's privacy, function will get called when Square is clicked
   renderSquare(i) {
-    return <Square value={this.state.squares[i]}/>;
+    return (
+      <Square
+        value={this.state.squares[i]}
+        onClick={() => this.handleClick(i)}
+      />
+    );
   }
+  //*split for readability, and added () so JS doesn't insert semicolon after return and break code
 
   render() {
     const status = 'Next player: X';
