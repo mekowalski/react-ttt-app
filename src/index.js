@@ -4,14 +4,11 @@ import './index.css'
 
 //First Component
 class Square extends React.Component {
-  //Delete constructor since Square is no longer keeping track of Game's state
   render() {
     return (
       <button
         className="square"
-        //Replace this.setState() with below
         onClick={() => this.props.onClick()}>
-        //Replace this.state.value with below
         {this.props.value}
       </button>
     );
