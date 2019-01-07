@@ -18,7 +18,6 @@ class Square extends React.Component {
 //Second Component
 //Parent Component to Child Square Component
 class Board extends React.Component {
-  //Add constructor to set initial state to contain an array with 9 nulls corresponding to the 9 squares
   constructor(props) {
     super(props)
     this.state = {
@@ -26,9 +25,13 @@ class Board extends React.Component {
     }
   }
 
-  //Modify to read from it, the squares array in the Board's constructor
-  //Each Square will now recieve a value prop of X, O or null for empty squares
-  //Maintain Board's privacy, function will get called when Square is clicked
+  //Add handlClick() to Board class
+  handleClick(i) {
+    const squares = this.state.squares.slice()
+    squares[i] = 'X'
+    this.setState({squares: squares})
+  }
+
   renderSquare(i) {
     return (
       <Square
@@ -37,7 +40,6 @@ class Board extends React.Component {
       />
     );
   }
-  //*split for readability, and added () so JS doesn't insert semicolon after return and break code
 
   render() {
     const status = 'Next player: X';
