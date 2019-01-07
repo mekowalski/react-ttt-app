@@ -35,8 +35,10 @@ class Board extends React.Component {
     }
   }
 
+  //Modify to read from it, the squares array in the Board's constructor
+  //Each Square will now recieve a value prop of X, O or null for empty squares
   renderSquare(i) {
-    return <Square value={i}/>;
+    return <Square value={this.state.squares[i]}/>;
   }
 
   render() {
