@@ -25,7 +25,16 @@ class Square extends React.Component {
 }
 
 //Second Component
+//Parent Component to Child Square Component
 class Board extends React.Component {
+  //Add constructor to set initial state to contain an array with 9 nulls corresponding to the 9 squares
+  constructor(props) {
+    super(props)
+    this.state = {
+      squares: Array(9).fill(null)
+    }
+  }
+
   renderSquare(i) {
     return <Square value={i}/>;
   }
